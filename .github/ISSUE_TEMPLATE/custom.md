@@ -1,7 +1,7 @@
 ---
 name: Custom issue template
 about: Describe this issue template's purpose here.
-title: "[이론] 강의 듣기"
+title: "[이론] 3강 연산자"
 labels: ''
 assignees: jectgenius
 
