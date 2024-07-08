@@ -1,7 +1,7 @@
 ---
-name: Custom issue template
+name: "[실습] Custom issue template"
 about: Describe this issue template's purpose here.
-title: "[이론] 3강 연산자"
+title: "[실습] 1.5강 개발환경구축"
 labels: ''
 assignees: jectgenius
 
