@@ -31,21 +31,58 @@ public class LoopStatement {                                                // L
         System.out.println("몇 단을 출력할까요?");                             // System.out.println() 메소드 호출하여 문자열 "몇 단을 출력할까요?" 출력, 단수 입력 안내 메세지 출력
         int dan = scanner.nextInt();                                        // int형 변수 dan 선언 동시에 scanner 객체의 nextInt() 메소드 호출하여 사용자로부터 입력 받은 정수 리턴하여 대입하여 초기화
 
-        for(int i = 1; i <= 9; i++) {                                       // for문 시작, int형 변수 i 선언 동시에 1 대입하여 초기화, i가 9보다 작거나 같을 동안 반복, i에 +1
+        for(int i = 1; i <= 9; i++) {                                       // for문 시작, 반복 제어 변수 int형 변수 i 선언 동시에 1 대입하여 초기화, i가 9보다 작거나 같을 동안 반복, i에 +1
             System.out.println(dan + " x " + i + " = " + (dan * i));        // System.out.println() 메소드 호출하여 문자열 "dan + " x " + i + " = " + (dan * i)" 출력, 구구단 출력
         }                                                                   // for문 끝
 
         System.out.println("출력 완료");                                     // System.out.println() 메소드 호출하여 문자열 "출력 완료" 출력, 출력 완료 안내 메세지 출력
 
         // label과 break문, continue문
-        for(int i = 1; i <= 3; i++) {
-            for(int j = 1; j <= 5; j++) {
-                if(j == 3) {
-                    break;
+        for(int i = 1; i <= 3; i++) {                                       // 바깥 for문 시작, 반복 제어 변수 int형 변수 i 선언 동시에 1 대입하여 초기화, i가 3보다 작거나 같을 동안 반복, i에 +1
+            for(int j = 1; j <= 5; j++) {                                   // 안쪽 for문 시작, 반복 제어 변수 int형 변수 j 선언 동시에 1 대입하여 초기화, j가 5보다 적거나 같을 동안 반복, j에 +1
+                if(j == 3) {                                                // 만약 j가 3이면
+                    break;                                                  // for문을 빠져나감, 라벨 지정이 없으면 자기 자신을 둘러싸고 있는 반복문 1개만 빠져나감, 라벨을 지정한 경우 지정한 라벨을 부착한 반복문을 빠져나감
                 }
-                System.out.println("(" + i + ", " + j + ")");
-            }
-            System.out.println("---------");
-        }
+                System.out.println("(" + i + ", " + j + ")");               // System.out.println() 메소드 호출하여 문자열 "(i, j)" 출력, 현재 (i, j) 값 출력
+            }                                                               // 안쪽 for문 끝
+            System.out.println("---------");                                // System.out.println() 메소드 호출하여 문자열 "---------" 출력, 안쪽과 바깥쪽 반복문 구분선 출력
+        }                                                                   // 바깥 for문 끝
+
+        // label과 break문, continue문
+        outter:
+        for(int i = 1; i <= 3; i++) {                                       // 바깥 for문 시작, 반복 제어 변수 int형 변수 i 선언 동시에 1 대입하여 초기화, i가 3보다 작거나 같을 동안 반복, i에 +1
+            inner:
+            for(int j = 1; j <= 5; j++) {                                   // 안쪽 for문 시작, 반복 제어 변수 int형 변수 j 선언 동시에 1 대입하여 초기화, j가 5보다 적거나 같을 동안 반복, j에 +1
+                if(j == 3) {                                                // 만약 j가 3이면
+                    break outter;                                           // for문을 빠져나감, 라벨 지정이 없으면 자기 자신을 둘러싸고 있는 반복문 1개만 빠져나감, 라벨을 지정한 경우 지정한 라벨을 부착한 반복문을 빠져나감
+                }
+                System.out.println("(" + i + ", " + j + ")");               // System.out.println() 메소드 호출하여 문자열 "(i, j)" 출력, 현재 (i, j) 값 출력
+            }                                                               // 안쪽 for문 끝
+            System.out.println("---------");                                // System.out.println() 메소드 호출하여 문자열 "---------" 출력, 안쪽과 바깥쪽 반복문 구분선 출력
+        }                                                                   // 바깥 for문 끝
+
+        // label과 break문, continue문
+        for(int i = 1; i <= 3; i++) {                                       // 바깥 for문 시작, 반복 제어 변수 int형 변수 i 선언 동시에 1 대입하여 초기화, i가 3보다 작거나 같을 동안 반복, i에 +1
+            for(int j = 1; j <= 5; j++) {                                   // 안쪽 for문 시작, 반복 제어 변수 int형 변수 j 선언 동시에 1 대입하여 초기화, j가 5보다 적거나 같을 동안 반복, j에 +1
+                if(j == 3) {                                                // 만약 j가 3이면
+                    continue;                                               // 이번 반복을 중단하고 다음 반복으로 넘어감, 라벨 지정이 없으면 자기 자신을 둘러싸고 있는 반복문 1개의 다음 반복으로 넘어감, 라벨을 지정한 경우 지정한 라벨을 부착한 반복문의 다음 반복으로 넘어감
+                }
+                System.out.println("(" + i + ", " + j + ")");               // System.out.println() 메소드 호출하여 문자열 "(i, j)" 출력, 현재 (i, j) 값 출력
+            }                                                               // 안쪽 for문 끝
+            System.out.println("---------");                                // System.out.println() 메소드 호출하여 문자열 "---------" 출력, 안쪽과 바깥쪽 반복문 구분선 출력
+        }                                                                   // 바깥 for문 끝
+
+        // label과 break문, continue문
+        outter:
+        for(int i = 1; i <= 3; i++) {                                       // 바깥 for문 시작, 반복 제어 변수 int형 변수 i 선언 동시에 1 대입하여 초기화, i가 3보다 작거나 같을 동안 반복, i에 +1
+            for(int j = 1; j <= 5; j++) {                                   // 안쪽 for문 시작, 반복 제어 변수 int형 변수 j 선언 동시에 1 대입하여 초기화, j가 5보다 적거나 같을 동안 반복, j에 +1
+                if(j == 3) {                                                // 만약 j가 3이면
+                    continue outter;                                        // 이번 반복을 중단하고 다음 반복으로 넘어감, 라벨 지정이 없으면 자기 자신을 둘러싸고 있는 반복문 1개의 다음 반복으로 넘어감, 라벨을 지정한 경우 지정한 라벨을 부착한 반복문의 다음 반복으로 넘어감
+                }
+                System.out.println("(" + i + ", " + j + ")");               // System.out.println() 메소드 호출하여 문자열 "(i, j)" 출력, 현재 (i, j) 값 출력
+            }                                                               // 안쪽 for문 끝
+            System.out.println("---------");                                // System.out.println() 메소드 호출하여 문자열 "---------" 출력, 안쪽과 바깥쪽 반복문 구분선 출력
+        }                                                                   // 바깥 for문 끝
+
     }                                                                       // main() 메소드 정의 시작
 }                                                                           // LoopStatement 클래스 정의 끝
