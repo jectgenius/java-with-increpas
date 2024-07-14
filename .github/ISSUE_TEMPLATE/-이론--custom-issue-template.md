@@ -1,9 +1,9 @@
 ---
 name: "[이론] Custom issue template"
 about: Describe this issue template's purpose here.
-title: ''
+title: "[이론] 0강 프로그래밍 기초"
 labels: ''
-assignees: ''
+assignees: jectgenius
 
 ---
 
